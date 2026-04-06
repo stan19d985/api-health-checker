@@ -80,6 +80,15 @@ ENDPOINTS = [
     ("search.usa.gov (treasury)", f"https://search.usa.gov/search?affiliate=treasury&query=debt+ceiling+update"),
     ("search.usa.gov (interior)", f"https://search.usa.gov/search?affiliate=doi.gov&query=national+park+closure"),
     ("search.usa.gov (agriculture)", f"https://search.usa.gov/search?affiliate=usda&query=crop+forecast+2026"),
+    # Direct .gov endpoint checks
+    ("cia.gov readingroom", "https://www.cia.gov/readingroom/"),
+    ("cia.gov", "https://www.cia.gov/"),
+    ("nsa.gov", "https://www.nsa.gov/"),
+    ("fbi.gov", "https://www.fbi.gov/"),
+    ("dni.gov", "https://www.dni.gov/"),
+    ("dia.mil", "https://www.dia.mil/"),
+    ("dc3.mil", "https://www.dc3.mil/"),
+    ("intelligence.gov", "https://www.intelligence.gov/"),
 ]
 
 
