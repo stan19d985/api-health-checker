@@ -1,0 +1,35 @@
+name: Daily Health Check
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run health check
+        run: python monitor.py
+
+      - name: Save log
+        run: |
+          mkdir -p logs
+          python monitor.py > "logs/check-$(date -u +%Y%m%d-%H%M%S).log" 2>&1
+          
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Health Monitor"
+          git add logs/
+          git diff --staged --quiet || git commit -m "check $(date -u +%Y-%m-%d)"
+          git push
