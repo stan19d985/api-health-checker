@@ -1,0 +1,472 @@
+========================================================================
+  ENDPOINT HEALTH CHECK
+  Timestamp:  2026-05-29T09:57:51Z
+  Endpoints:  54
+========================================================================
+
+  Endpoint                                 Status       Time       Size
+  ──────────────────────────────────────── ──────── ──────── ──────────
+  ✓ weather.gov                             200         163ms   120,673B
+  ✓ weather.gov API                         200         148ms     9,496B
+  ✓ airnow.gov                              200          91ms   105,285B
+  ✓ usgs.gov earthquake feed                200          86ms       939B
+  ✓ epa.gov                                 200          83ms    64,629B
+  ✓ data.gov                                200         256ms   121,509B
+  ✓ census.gov                              200         299ms   349,695B
+  ! bls.gov                                 403         228ms          —
+    └─ Forbidden
+  ✗ fred.stlouisfed.org                     FAIL      20155ms          —
+    └─ The read operation timed out
+  ✓ usaspending.gov                         200         557ms     2,983B
+  ✓ usa.gov                                 200          73ms    47,195B
+  ✓ gsa.gov                                 200         101ms   192,211B
+  ✓ whitehouse.gov                          200         134ms   264,599B
+  ! congress.gov                            403          65ms          —
+    └─ Forbidden
+  ✓ federalregister.gov                     200         549ms    10,596B
+  ✓ govinfo.gov                             200         117ms    65,675B
+  ! regulations.gov                         403          63ms          —
+    └─ Forbidden
+  ✓ grants.gov                              200          77ms    62,136B
+  ✓ nih.gov                                 200         121ms    60,764B
+  ✓ cdc.gov                                 200         133ms    60,698B
+  ✓ nasa.gov                                200         144ms   343,486B
+  ✓ nsf.gov                                 200          81ms    81,351B
+  ✓ energy.gov                              200          99ms   130,338B
+  ✓ usps.com tracking                       200         327ms    87,138B
+  ✓ irs.gov                                 200         222ms   133,138B
+  ! ssa.gov                                 403         188ms          —
+    └─ Forbidden
+  ✓ sba.gov                                 200          90ms   125,837B
+  ! search.usa.gov (usa.gov)                202          59ms          —
+  ! search.usa.gov (weather)                202          69ms          —
+  ! search.usa.gov (education)              202          62ms          —
+  ! search.usa.gov (health)                 202          60ms          —
+  ! search.usa.gov (veterans)               202         217ms          —
+  ! search.usa.gov (irs)                    202         193ms          —
+  ! search.usa.gov (nasa)                   202          60ms          —
+  ! search.usa.gov (cia)                    202          60ms          —
+  ! search.usa.gov (nsa)                    202         216ms          —
+  ! search.usa.gov (fbi)                    202          63ms          —
+  ! search.usa.gov (dhs)                    202          59ms          —
+  ! search.usa.gov (defense)                202          60ms          —
+  ! search.usa.gov (state)                  202          71ms          —
+  ! search.usa.gov (justice)                202          60ms          —
+  ! search.usa.gov (labor)                  202          62ms          —
+  ! search.usa.gov (commerce)               202          69ms          —
+  ! search.usa.gov (treasury)               202          60ms          —
+  ! search.usa.gov (interior)               202          60ms          —
+  ! search.usa.gov (agriculture)            202          62ms          —
+  ! cia.gov readingroom                     302         463ms          —
+    └─ The HTTP server returned a redirect error that would lead to
+  ✓ cia.gov                                 200         157ms   424,106B
+  ! nsa.gov                                 403         153ms          —
+    └─ Forbidden
+  ✓ fbi.gov                                 200         170ms    54,632B
+  ! dni.gov                                 403         151ms          —
+    └─ Forbidden
+  ! dia.mil                                 403         262ms          —
+    └─ Forbidden
+  ! dc3.mil                                 403        1367ms          —
+    └─ Forbidden
+  ! intelligence.gov                        403         163ms          —
+    └─ Forbidden
+
+========================================================================
+  SUMMARY
+  Healthy:    24/54
+  Failed:     30/54
+  Avg time:   539ms
+  Timestamp:  2026-05-29T09:57:51Z
+========================================================================
+
+─── FULL ENDPOINT LOG ───
+  [OK] https://www.weather.gov/
+  [OK] https://api.weather.gov/
+  [OK] https://www.airnow.gov/
+  [OK] https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=1
+  [OK] https://www.epa.gov/
+  [OK] https://www.data.gov/
+  [OK] https://www.census.gov/
+  [ERR:403] https://www.bls.gov/
+  [ERR:FAIL] https://fred.stlouisfed.org/
+  [OK] https://www.usaspending.gov/
+  [OK] https://www.usa.gov/
+  [OK] https://www.gsa.gov/
+  [OK] https://www.whitehouse.gov/
+  [ERR:403] https://www.congress.gov/
+  [OK] https://www.federalregister.gov/
+  [OK] https://www.govinfo.gov/
+  [ERR:403] https://www.regulations.gov/
+  [OK] https://www.grants.gov/
+  [OK] https://www.nih.gov/
+  [OK] https://www.cdc.gov/
+  [OK] https://www.nasa.gov/
+  [OK] https://www.nsf.gov/
+  [OK] https://www.energy.gov/
+  [OK] https://www.usps.com/
+  [OK] https://www.irs.gov/
+  [ERR:403] https://www.ssa.gov/
+  [OK] https://www.sba.gov/
+  [ERR:202] https://search.usa.gov/search?affiliate=usagov&query=benefits+eligibility
+  [ERR:202] https://search.usa.gov/search?affiliate=noaa.gov&query=forecast+update
+  [ERR:202] https://search.usa.gov/search?affiliate=ed.gov&query=student+loan+forgiveness
+  [ERR:202] https://search.usa.gov/search?affiliate=hhs.gov&query=medicare+enrollment
+  [ERR:202] https://search.usa.gov/search?affiliate=va&query=veteran+benefits+2026
+  [ERR:202] https://search.usa.gov/search?affiliate=irs&query=tax+refund+status
+  [ERR:202] https://search.usa.gov/search?affiliate=nasa&query=artemis+mission+update
+  [ERR:202] https://search.usa.gov/search?affiliate=cia&query=sns_anon
+  [ERR:202] https://search.usa.gov/search?affiliate=nsa&query=sns_anon
+  [ERR:202] https://search.usa.gov/search?affiliate=fbi&query=sns_anon
+  [ERR:202] https://search.usa.gov/search?affiliate=dhs&query=sns_anon
+  [ERR:202] https://search.usa.gov/search?affiliate=defense.gov&query=sns_anon
+  [ERR:202] https://search.usa.gov/search?affiliate=dos&query=travel+advisory+update
+  [ERR:202] https://search.usa.gov/search?affiliate=doj&query=federal+prosecution+guidelines
+  [ERR:202] https://search.usa.gov/search?affiliate=dol&query=unemployment+claims+data
+  [ERR:202] https://search.usa.gov/search?affiliate=commerce.gov&query=trade+deficit+report
+  [ERR:202] https://search.usa.gov/search?affiliate=treasury&query=debt+ceiling+update
+  [ERR:202] https://search.usa.gov/search?affiliate=doi.gov&query=national+park+closure
+  [ERR:202] https://search.usa.gov/search?affiliate=usda&query=crop+forecast+2026
+  [ERR:302] https://www.cia.gov/readingroom/
+  [OK] https://www.cia.gov/
+  [ERR:403] https://www.nsa.gov/
+  [OK] https://www.fbi.gov/
+  [ERR:403] https://www.dni.gov/
+  [ERR:403] https://www.dia.mil/
+  [ERR:403] https://www.dc3.mil/
+  [ERR:403] https://www.intelligence.gov/
+
+─── JSON ───
+{
+  "timestamp": "2026-05-29T09:57:51Z",
+  "total": 54,
+  "healthy": 24,
+  "failed": 30,
+  "avg_response_ms": 539,
+  "endpoints": [
+    {
+      "name": "weather.gov",
+      "url": "https://www.weather.gov/",
+      "status": 200,
+      "ms": 163
+    },
+    {
+      "name": "weather.gov API",
+      "url": "https://api.weather.gov/",
+      "status": 200,
+      "ms": 148
+    },
+    {
+      "name": "airnow.gov",
+      "url": "https://www.airnow.gov/",
+      "status": 200,
+      "ms": 91
+    },
+    {
+      "name": "usgs.gov earthquake feed",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=1",
+      "status": 200,
+      "ms": 86
+    },
+    {
+      "name": "epa.gov",
+      "url": "https://www.epa.gov/",
+      "status": 200,
+      "ms": 83
+    },
+    {
+      "name": "data.gov",
+      "url": "https://www.data.gov/",
+      "status": 200,
+      "ms": 256
+    },
+    {
+      "name": "census.gov",
+      "url": "https://www.census.gov/",
+      "status": 200,
+      "ms": 299
+    },
+    {
+      "name": "bls.gov",
+      "url": "https://www.bls.gov/",
+      "status": 403,
+      "ms": 228
+    },
+    {
+      "name": "fred.stlouisfed.org",
+      "url": "https://fred.stlouisfed.org/",
+      "status": "FAIL",
+      "ms": 20155
+    },
+    {
+      "name": "usaspending.gov",
+      "url": "https://www.usaspending.gov/",
+      "status": 200,
+      "ms": 557
+    },
+    {
+      "name": "usa.gov",
+      "url": "https://www.usa.gov/",
+      "status": 200,
+      "ms": 73
+    },
+    {
+      "name": "gsa.gov",
+      "url": "https://www.gsa.gov/",
+      "status": 200,
+      "ms": 101
+    },
+    {
+      "name": "whitehouse.gov",
+      "url": "https://www.whitehouse.gov/",
+      "status": 200,
+      "ms": 134
+    },
+    {
+      "name": "congress.gov",
+      "url": "https://www.congress.gov/",
+      "status": 403,
+      "ms": 65
+    },
+    {
+      "name": "federalregister.gov",
+      "url": "https://www.federalregister.gov/",
+      "status": 200,
+      "ms": 549
+    },
+    {
+      "name": "govinfo.gov",
+      "url": "https://www.govinfo.gov/",
+      "status": 200,
+      "ms": 117
+    },
+    {
+      "name": "regulations.gov",
+      "url": "https://www.regulations.gov/",
+      "status": 403,
+      "ms": 63
+    },
+    {
+      "name": "grants.gov",
+      "url": "https://www.grants.gov/",
+      "status": 200,
+      "ms": 77
+    },
+    {
+      "name": "nih.gov",
+      "url": "https://www.nih.gov/",
+      "status": 200,
+      "ms": 121
+    },
+    {
+      "name": "cdc.gov",
+      "url": "https://www.cdc.gov/",
+      "status": 200,
+      "ms": 133
+    },
+    {
+      "name": "nasa.gov",
+      "url": "https://www.nasa.gov/",
+      "status": 200,
+      "ms": 144
+    },
+    {
+      "name": "nsf.gov",
+      "url": "https://www.nsf.gov/",
+      "status": 200,
+      "ms": 81
+    },
+    {
+      "name": "energy.gov",
+      "url": "https://www.energy.gov/",
+      "status": 200,
+      "ms": 99
+    },
+    {
+      "name": "usps.com tracking",
+      "url": "https://www.usps.com/",
+      "status": 200,
+      "ms": 327
+    },
+    {
+      "name": "irs.gov",
+      "url": "https://www.irs.gov/",
+      "status": 200,
+      "ms": 222
+    },
+    {
+      "name": "ssa.gov",
+      "url": "https://www.ssa.gov/",
+      "status": 403,
+      "ms": 188
+    },
+    {
+      "name": "sba.gov",
+      "url": "https://www.sba.gov/",
+      "status": 200,
+      "ms": 90
+    },
+    {
+      "name": "search.usa.gov (usa.gov)",
+      "url": "https://search.usa.gov/search?affiliate=usagov&query=benefits+eligibility",
+      "status": 202,
+      "ms": 59
+    },
+    {
+      "name": "search.usa.gov (weather)",
+      "url": "https://search.usa.gov/search?affiliate=noaa.gov&query=forecast+update",
+      "status": 202,
+      "ms": 69
+    },
+    {
+      "name": "search.usa.gov (education)",
+      "url": "https://search.usa.gov/search?affiliate=ed.gov&query=student+loan+forgiveness",
+      "status": 202,
+      "ms": 62
+    },
+    {
+      "name": "search.usa.gov (health)",
+      "url": "https://search.usa.gov/search?affiliate=hhs.gov&query=medicare+enrollment",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (veterans)",
+      "url": "https://search.usa.gov/search?affiliate=va&query=veteran+benefits+2026",
+      "status": 202,
+      "ms": 217
+    },
+    {
+      "name": "search.usa.gov (irs)",
+      "url": "https://search.usa.gov/search?affiliate=irs&query=tax+refund+status",
+      "status": 202,
+      "ms": 193
+    },
+    {
+      "name": "search.usa.gov (nasa)",
+      "url": "https://search.usa.gov/search?affiliate=nasa&query=artemis+mission+update",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (cia)",
+      "url": "https://search.usa.gov/search?affiliate=cia&query=sns_anon",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (nsa)",
+      "url": "https://search.usa.gov/search?affiliate=nsa&query=sns_anon",
+      "status": 202,
+      "ms": 216
+    },
+    {
+      "name": "search.usa.gov (fbi)",
+      "url": "https://search.usa.gov/search?affiliate=fbi&query=sns_anon",
+      "status": 202,
+      "ms": 63
+    },
+    {
+      "name": "search.usa.gov (dhs)",
+      "url": "https://search.usa.gov/search?affiliate=dhs&query=sns_anon",
+      "status": 202,
+      "ms": 59
+    },
+    {
+      "name": "search.usa.gov (defense)",
+      "url": "https://search.usa.gov/search?affiliate=defense.gov&query=sns_anon",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (state)",
+      "url": "https://search.usa.gov/search?affiliate=dos&query=travel+advisory+update",
+      "status": 202,
+      "ms": 71
+    },
+    {
+      "name": "search.usa.gov (justice)",
+      "url": "https://search.usa.gov/search?affiliate=doj&query=federal+prosecution+guidelines",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (labor)",
+      "url": "https://search.usa.gov/search?affiliate=dol&query=unemployment+claims+data",
+      "status": 202,
+      "ms": 62
+    },
+    {
+      "name": "search.usa.gov (commerce)",
+      "url": "https://search.usa.gov/search?affiliate=commerce.gov&query=trade+deficit+report",
+      "status": 202,
+      "ms": 69
+    },
+    {
+      "name": "search.usa.gov (treasury)",
+      "url": "https://search.usa.gov/search?affiliate=treasury&query=debt+ceiling+update",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (interior)",
+      "url": "https://search.usa.gov/search?affiliate=doi.gov&query=national+park+closure",
+      "status": 202,
+      "ms": 60
+    },
+    {
+      "name": "search.usa.gov (agriculture)",
+      "url": "https://search.usa.gov/search?affiliate=usda&query=crop+forecast+2026",
+      "status": 202,
+      "ms": 62
+    },
+    {
+      "name": "cia.gov readingroom",
+      "url": "https://www.cia.gov/readingroom/",
+      "status": 302,
+      "ms": 463
+    },
+    {
+      "name": "cia.gov",
+      "url": "https://www.cia.gov/",
+      "status": 200,
+      "ms": 157
+    },
+    {
+      "name": "nsa.gov",
+      "url": "https://www.nsa.gov/",
+      "status": 403,
+      "ms": 153
+    },
+    {
+      "name": "fbi.gov",
+      "url": "https://www.fbi.gov/",
+      "status": 200,
+      "ms": 170
+    },
+    {
+      "name": "dni.gov",
+      "url": "https://www.dni.gov/",
+      "status": 403,
+      "ms": 151
+    },
+    {
+      "name": "dia.mil",
+      "url": "https://www.dia.mil/",
+      "status": 403,
+      "ms": 262
+    },
+    {
+      "name": "dc3.mil",
+      "url": "https://www.dc3.mil/",
+      "status": 403,
+      "ms": 1367
+    },
+    {
+      "name": "intelligence.gov",
+      "url": "https://www.intelligence.gov/",
+      "status": 403,
+      "ms": 163
+    }
+  ]
+}
